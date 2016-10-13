@@ -2,13 +2,12 @@
     In the following script we will store
     all controllers & services.
     */
+/*jslint white:true */
+/*global angular */
 angular.module('projectCtrlModule', [])
 
-.controller("projectCtrl",["$scope", function($scope){
-    
-    
-}]),
-//Using a service which will only have one instance, this allow us to abstract use and functionality across application
-.factory("doStuff", function(){
-    
+.controller("homeCtrl", function($scope) {
+        "use strict";
+    $scope.msg = "home page";
 });
+//Using a service which will only have one instance, this allow us to abstract use and functionality across application
