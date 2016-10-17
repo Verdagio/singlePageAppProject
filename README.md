@@ -43,7 +43,4 @@ body of topic
 add button, cancel button
 footer
 
-using python & flask a database will store the post & user info,
-data links into factory then using angular ng repeat contents from factory
 
-ng-route used to switch between views seamlessl
