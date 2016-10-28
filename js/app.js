@@ -4,7 +4,7 @@
   */
 /*jslint white:true */
 /*global angular */
-var app = angular.module('projectApp', ["ngRoute", "projectCtrlModule"]);
+var app = angular.module('app', ["ngRoute", "app.controller","app.services"]);
 
 app.config(function($routeProvider){
     "use strict";
@@ -12,18 +12,17 @@ app.config(function($routeProvider){
     
     .when("/", {
         templateUrl:"views/home.html",
-        controller: "projectCtrl"
+        controller: 'homeCtrl'
     })
     .when("/new", {
-        templateUrl: "views/new.html",
-        controller: "projectCtrl"
+        templateUrl: "views/new.html"
+        //controller: "app.controller"
     })
     .when("/topic",{
-        templateUrl: "views/topic.html",
-        controller: "projectCtrl"
+        templateUrl: "views/topic.html"
+        //controller: "homeCtrl"
     })
     .otherwise({
         templateUrl: "views/home.html"
     });
 });
-
