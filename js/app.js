@@ -4,7 +4,7 @@
   */
 /*jslint white:true */
 /*global angular */
-var app = angular.module('app', ["ngRoute", "app.controller","app.services"]);
+var app = angular.module('app', ["ngRoute", "app.controller","app.services", "app.parse"]);
 
 app.config(function($routeProvider){
     "use strict";

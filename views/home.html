@@ -1,11 +1,16 @@
+<!--Created by Daniel Verdejo on 11/10/2016-->
 
     <br/>
     <p>this is the home page</p>
 
 
-    <div>
-        <button ng-click="home()">!!!</button>
-        
+    <div ng-controller="homeCtrl as list">
+        <ul class="list">
+              <li ng-repeat="topic in list.topics">
+                <a href="#/topic" >
+            {{topic.title}}</a>
+            </li>
+        </ul>
     </div>
-    <a href="#/topic">topic</a>
+    <!--<a href="#/topic">topic</a>-->
     <a href="#/new">create new topic</a>
