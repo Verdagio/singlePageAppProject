@@ -1,16 +1,34 @@
 <!--Created by Daniel Verdejo on 11/10/2016-->
 
-    <br/>
-    <p>this is the home page</p>
-
-
-    <div ng-controller="homeCtrl as list">
-        <ul class="list">
-              <li ng-repeat="topic in list.topics">
-                <a href="#/topic" >
-            {{topic.title}}</a>
-            </li>
-        </ul>
+<nav class="navbar navbar-dark bg-danger">
+    <!-- Navbar content -->
+    <h2  class="header float-lg-left" style="color: white">FourLeaf Interactive</h2>
+    <form class="form-inline float-lg-right">
+    <input class="form-control" type="text" placeholder="Search">     <button class="btn btn-outline-success" type="submit">Search
+    </button>
+  
+</nav>
+<div class = "main">
+    
+    <div ng-controller="homeCtrl as list" >
+        <l class="list" ng-repeat="topic in list.topics">
+            <a href="#/topic">
+                
+                
+            <div class="card card-inverse" style="background-color: #333; border-color: #333; padding: 10px;">
+                 <img class="card-img" src={{topic.img}} alt="Card image">
+                 <div class="card-img-overlay">
+                    <h3 class="card-title">{{topic.title}}</h3>
+                    <p class="card-text" style="color: white">{{topic.info}}</p>
+                </div>
+            </div>
+            </a>
+        </l>
     </div>
     <!--<a href="#/topic">topic</a>-->
-    <a href="#/new">create new topic</a>
+    
+
+    
+
+
+</div>

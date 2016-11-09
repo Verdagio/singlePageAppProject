@@ -13,6 +13,8 @@ angular.module('app.controller', [])
         var t = this;
     
         t.topics = topics.item;
+    
+
            
 });
 

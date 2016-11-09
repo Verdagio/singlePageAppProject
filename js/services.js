@@ -18,10 +18,10 @@ angular.module('app.services', [])
     var topics = {};
     
     topics.item = [
-        {title: "Movies", id: 1},
-        {title: "Games", id: 4},
-        {title: "Other", id: 3},
-        {title: "About", id: 2}
+        {title: "Games", img: "http://1u88jj3r4db2x4txp44yqfj1.wpengine.netdna-cdn.com/wp-content/uploads/2014/04/tw-division.jpg", info: "All the latest news on everything gaming related. Gameplays, reviews, & discussions", id: 1},
+        {title: "TV & Movies", img: "http://www.twitrcovers.com/wp-content/uploads/2015/06/ryan-gosling-man-l.jpg", info: "Movie & TV news. None of the celeb gossip, just reviews and discussions about some of the greatest cinematography right now", id: 2},
+        {title: "All", img: "https://stormideaswus.blob.core.windows.net/headerjunction/2014/91/e1246fd3-1717-401a-ab90-623b50e2ff94.jpg", info: "All the good stuff, uncategorized." , id: 3},
+        {title: "About", img: "https://stormideaswus.blob.core.windows.net/headerjunction/2014/91/d9cfd268-484f-49be-8fcf-f2f30cc74b77.jpg", info: "Learn a little more about us, what we do, & how we do it", id: 4}
     ];
     
     return topics;
