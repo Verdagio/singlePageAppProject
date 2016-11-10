@@ -11,6 +11,8 @@ angular.module('app.parse', [])
 
 .factory('info', function(){
    "use strict";
-    window.alert("Test message: the parse info is correctly linked");
- 
+    //window.alert("Test message: the parse info is correctly linked");
+    
+    
+    
 });

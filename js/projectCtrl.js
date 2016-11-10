@@ -8,13 +8,19 @@ angular.module('app.controller', [])
 
 .controller('homeCtrl', function(topics) {
         "use strict";
-        window.alert("Test message: the controller is working");
+        //window.alert("Test message: the controller is working");
     
         var t = this;
     
-        t.topics = topics.item;
-    
+        t.topics = topics.item;         
+})
 
-           
+.controller('topicCtrl', function(posts){
+    "use strict";
+        var p = this;
+            
+        p.posts = posts.item; 
+            
+            
 });
 
