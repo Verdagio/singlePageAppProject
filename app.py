@@ -1,5 +1,6 @@
+#Created By Karle Sleith
+
 from flask import Flask,render_template
-#from HTMLParser import HTMLParser
 import pymongo
 from pymongo import MongoClient
 
@@ -9,16 +10,25 @@ db = client.fliDb
 
 app = Flask(__name__)
 
-#filename = 'C:/Users/Karle Sleith/Desktop/singlePageAppProject/index.html'
-#f = open(filename, "r").read()
+games = db.games
+g= games.find()
 
-games = db.games.find_one()
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 #@ signifies a decorator -  Function
 @app.route('/')
 def root():
-    return render_template('index.html')
+    return render_template("index.html")
+
+@app.route('/profile/<name>')
+def profile(name):
+    return render_template("index.html",name=name)
+
+@app.route('/d', methods = ["GET"])
+def content():
+    for game in g:
+        m = str(game)
+        return "GET" + 
 
 if __name__ == "__main__":
     app.run(debug = True)
