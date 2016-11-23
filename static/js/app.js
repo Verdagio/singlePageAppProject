@@ -15,18 +15,18 @@ app.config(function($routeProvider){
     $routeProvider
     
     .when("/", {
-        templateUrl:"views/home.html",
+        templateUrl:"/./../views/home.html",
         controller: 'homeCtrl'
     })
     .when("/new", {
-        templateUrl: "views/new.html"
+        templateUrl: "/./../views/new.html"
         //controller: "topicCtrl"
     })
     .when("/topic", {
-        templateUrl: "views/topic.html",
+        templateUrl: "/./../views/topic.html",
         controller: "topicCtrl"
     })
     .otherwise({
-        templateUrl: "views/home.html"
+        templateUrl: "/./../views/home.html"
     });
 });

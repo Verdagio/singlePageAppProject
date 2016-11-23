@@ -1,34 +1,43 @@
-#Created By Karle Sleith
-
-from flask import Flask,render_template
+#
+from flask import Flask,request, send_from_directory
 import pymongo
 from pymongo import MongoClient
+import json
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#-------------------------------------#
 client = MongoClient()
-db = client.fliDb
+db = client.test
+#db.client.test
 
-app = Flask(__name__)
+payload = {'id':'val','title':'tVal','body': 'bVal'}
 
-games = db.games
-g= games.find()
+app = Flask(__name__, static_url_path='')
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-#@ signifies a decorator -  Function
+
+#-------------------------------------#
+#The code below defines the path in which to find
+#app.js application which will allow our app to 
+#execute on local host... muuurica! f**k yeah! :)
+
+
+
+@app.route('/./js/<path:path>')
+def send_js(path):
+    return app.send_from_directory('app.js',path)
+
+
+#The route for our index.html is sent as a staic file
 @app.route('/')
-def root():
-    return render_template("index.html")
+def index():
+    return app.send_static_file("index.html")
 
-@app.route('/profile/<name>')
-def profile(name):
-    return render_template("index.html",name=name)
+#@app.route('/test', methods = ['POST'])
+#def cool():
+#    dataStream = requests.post(client, d = json.dumps(payload))
+        
+	
 
-@app.route('/d', methods = ["GET"])
-def content():
-    for game in g:
-        m = str(game)
-        return "GET" + 
-
+	
 if __name__ == "__main__":
     app.run(debug = True)

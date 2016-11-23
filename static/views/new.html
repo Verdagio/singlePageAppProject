@@ -10,17 +10,16 @@
 </nav>
 <div>
     
-</div>
-    <p>this is the topic creation page</p>
-
-<div class="input-box">
+</div >
+<div ng-controller="addCtrl as ac" class="input-box">
     <label for="title">Title of topic</label>
-    <input type="text" class="form-control" id="title">
+    <input type="text" class="form-control" id="title" ng-model="ac.newP.title">
     <label for="body">Body of topic:</label>
-    <textarea class="form-control" rows="10" id="body" ng-model+></textarea>
-</div>
+    <textarea class="form-control" rows="10" id="body" ng-model="ac.newP.body"></textarea>
+
 <div class="buttons">
-    <button type="submit" class="btn btn-block btn-outline-success"> Save</button>
+    <button ng-click="ac.add(ac.newP.title, ac.newP.body)" type="submit" class="btn btn-block btn-outline-success" onclick="history.go(-1);">Save</button>
    <a href="#/topic" class="btn btn-block btn-outline-danger">Cancel</a> 
 </div>
+    </div>
     

@@ -10,19 +10,22 @@
 <div ng-controller="topicCtrl as list">
         <div class="card card-block">
         <l class="list" ng-repeat="post in list.posts">
+            </br>
             <h4 class="card-title">{{post.title}}</h4>
             <p class="card-text">{{post.body}}</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <!--- the functionality of the below will be added towards end, time permitting-->
+            <a href="#/topic" class="btn btn-outline-primary">Like</a>
+            <a href="#/topic" class="btn btn-outline-primary">Comment</a>
             </br
         </l>
         </div>
     </div>
 </div>
+    <span class="glyphicon glyphicon-ok"></span>
 
     
 <div class="buttons">
-    <a href="#/new" class="btn btn-block btn-outline-success btn-md glyphicon glyphicon-plus">Add</a>
+    <a href="#/new" class="btn btn-block btn-outline-success btn-md"><i class="glyphicon glyphicon-ok"></i>Add</a>
     <a href="#/home" class="btn btn-block btn-outline-info btn-md">Home</a>
 </div>
 
