@@ -13,13 +13,36 @@
 
 angular.module('app.data',[])
 
-.factory('data', function($http, posts){
+.service('dataStreamService', function($http, posts){
     "use strict";
     
-    var data = posts;
+    var data = posts.posts;
+    //window.alert(data.data);
     
+   // window.console.log(data);
+    //window.console.log(JSON.stringify(data));
     
+    function getData(){
+        $http.get({
+            url: '/h',
+            data: JSON.parse(data)
+        }).success(function(response){
+            window.console.log("Success get");
+        }).error(function(){
+            window.console.log("failed get");
+        });
+        
+    }
     
-    
-    
+    function postData(){
+        $http.post({
+            url: '/h',
+            data: JSON.stringify(data)
+        }).success(function(response){
+            window.alert.log("success post");
+        }).error(function(){
+            window.console.log("failed post");
+        });
+    }
+    return getData();
 });

@@ -38,7 +38,7 @@ angular.module('app.controller', [])
     on the new.html page. Used for adding
     new posts to the posts list.
 */
-.controller('addCtrl', function(posts){
+.controller('addCtrl', function(posts, data){
     "use strict";
     var addMe = this;
     
