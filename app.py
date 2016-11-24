@@ -11,7 +11,7 @@ db = client.test
 
 payload = {'id':'val','title':'tVal','body': 'bVal'}
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 
 
 
@@ -22,15 +22,17 @@ app = Flask(__name__, static_url_path='')
 
 
 
-@app.route('/./js/<path:path>')
-def send_js(path):
-    return app.send_from_directory('app.js',path)
 
 
 #The route for our index.html is sent as a staic file
 @app.route('/')
 def index():
     return app.send_static_file("index.html")
+
+@app.route('/./static/js/<path:path>')
+def send_js(path):
+    return app.send_from_directory('app.js',path)
+
 
 #@app.route('/test', methods = ['POST'])
 #def cool():
