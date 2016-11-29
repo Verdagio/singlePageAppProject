@@ -1,7 +1,6 @@
 import pymongo
-from pymongo import Connection
-
-connection = Connection()
+from pymongo import MongoClient
+connection = MongoClient()
 db = connection['project']
 connection = db['info']
 

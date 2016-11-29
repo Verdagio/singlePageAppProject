@@ -60,7 +60,7 @@ angular.module('app.services', [])
         posts.item = data.getData();
    };
    posts.addPost = function(title, body){     
-        data.postData(posts.item.push({id: posts.item.length, title: title, body: body}));
+        data.postData(posts.item.push({title: title, body: body}));
    };
     
 
