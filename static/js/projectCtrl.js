@@ -29,8 +29,10 @@ angular.module('app.controller', [])
 .controller('topicCtrl', function(posts){
     "use strict";
         var p = this;
+    
+    p.posts = posts.getPosts();
             
-        p.posts = posts.item; 
+        
               
 })
 /*  D.V. -  16/Nov/16 
@@ -38,12 +40,12 @@ angular.module('app.controller', [])
     on the new.html page. Used for adding
     new posts to the posts list.
 */
-.controller('addCtrl', function(posts, data){
+.controller('addCtrl', function(posts){
     "use strict";
     var addMe = this;
     
     addMe.add = function(title, body){
-        posts.add(title, body);
+        posts.addPost(title, body);
         //addMe.newP = '';
         //window.alert("Post Saved!");
     };    

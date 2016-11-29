@@ -43,9 +43,13 @@ def requestHandler():
     #dataStream = requests.post(client, d = json.dumps(payload))
     #document = "lol"
     
+    a = []
     for a in g :
         str(a)
-    return str(a ['title'])+ " " + str(a['body'])
+        
+    title = str(a ['title'])
+    body = str(a ['body'])
+    return (title + " " + body)
 
     
 	

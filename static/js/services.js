@@ -43,17 +43,10 @@ angular.module('app.services', [])
     pass file to database, update information in database and send
     back the updated data.
     */
-.factory('posts', function(dataStreamService){
+.factory('posts', function(data){
     "use strict";
     var posts={};
-    posts.item = [{id:'',title: '', body:''}];
-
-    /*posts.item = [{id: 1, title:"An Intro!", body:"Hello there! Welcome to the first post of the blog. In our blog we're going to talk about everything from games, to tv shows & movies. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things gaming, tv, & film. Thanks for reading and get posting :) "},
-    {id: 2, title:"An Intro to games!", body:"Hello there! Welcome to the first post of the blog. In this section it's all fun and games. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things gaming. Thanks for reading and get posting :)"},
-    {id: 3, title:"An Intro!", body:"Hello there! Welcome to the first post of the blog. In this section it's show time, the discussions, spoilers, and reactions to the best of tv & film. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things tv, & film. Thanks for reading and get posting :)"}   
-    ];*/
-    
-    
+    posts.item = data.item;    
     /*  D.V. 16/Nov/16 
         - Add post function below - 
         post id will be automated, title & body to be entered 
@@ -63,13 +56,12 @@ angular.module('app.services', [])
         layer, with aim of parsing to .json file and making a request from
         api.
     */
-    function getPosts(){
-        posts.item = dataStreamService.getData();
-    }
-   function addPost(title, body){
-        
-        dataStreamService.postData(posts.item.push({id: posts.item.length, title: title, body: body}));
-    }
+   posts.getPosts = function(){
+        posts.item = data.getData();
+   };
+   posts.addPost = function(title, body){     
+        data.postData(posts.item.push({id: posts.item.length, title: title, body: body}));
+   };
     
 
     

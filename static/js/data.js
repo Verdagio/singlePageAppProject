@@ -13,36 +13,32 @@
 
 angular.module('app.data',[])
 
-.service('dataStreamService', function($http, posts){
+.factory('data', function($http, $log){
     "use strict";
     
-    var data = posts.posts;
+    var data = {};
     //window.alert(data.data);
     
    // window.console.log(data);
     //window.console.log(JSON.stringify(data));
     
-    function getData(){
-        $http.get({
-            url: '/h',
-            data: JSON.parse(data)
-        }).success(function(response){
-            window.console.log("Success get");
-        }).error(function(){
-            window.console.log("failed get");
-        });
-        
-    }
+    //data.getData = function(){
+    /*data.item = [{id: 1, title:"An Intro!", body:"Hello there! Welcome to the first post of the blog. In our blog we're going to talk about everything from games, to tv shows & movies. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things gaming, tv, & film. Thanks for reading and get posting :) "},
+    {id: 2, title:"An Intro to games!", body:"Hello there! Welcome to the first post of the blog. In this section it's all fun and games. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things gaming. Thanks for reading and get posting :)"},
+    {id: 3, title:"An Intro!", body:"Hello there! Welcome to the first post of the blog. In this section it's show time, the discussions, spoilers, and reactions to the best of tv & film. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things tv, & film. Thanks for reading and get posting :)"}   
+    ];*/
     
-    function postData(){
-        $http.post({
-            url: '/h',
-            data: JSON.stringify(data)
-        }).success(function(response){
-            window.alert.log("success post");
-        }).error(function(){
-            window.console.log("failed post");
-        });
-    }
-    return getData();
-});
+        data.getData = function(){
+            $http({
+                method: 'GET',
+                url: 'http://127.0.0.1:5000/h'
+            }).then(function success(response){
+                $log.info(response);
+                data.item = JSON.parse(response.data);
+            }, function error(response){
+                $log.info(response);
+            });
+        };
+        return data;
+
+    });
