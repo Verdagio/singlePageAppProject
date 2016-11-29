@@ -1,4 +1,4 @@
-#
+
 from flask import Flask, request, send_from_directory
 import pymongo
 from pymongo import MongoClient
@@ -6,13 +6,16 @@ import json
 import flask as fff
 
 #-------------------------------------#
+
+
 client = MongoClient()
-db = client.local
-#db.client.test
+db = client.project
+
 
 payload = {'id':'val','title':'tVal','body': 'bVal'}
 
-g = db.h.find()
+g = db.posts.find()
+
 
 app = Flask(__name__)
 
@@ -39,22 +42,15 @@ def send_js(path):
 
 @app.route('/h', methods = ['POST', 'GET'])
 def requestHandler():
-    document = db.h.find()  
-    #dataStream = requests.post(client, d = json.dumps(payload))
-    #document = "lol"
     
-    a = []
-    for a in g :
-        str(a)
+    print  ("\nTest from DB")
+    l=[]
+    for a in g: l.append({'Title':a['Title'],'Body':a['Body']})
         
-    title = str(a ['title'])
-    body = str(a ['body'])
-    return (title + " " + body)
+    print(l)
+    return str(l)
 
-    
-	
 
-	
 if __name__ == "__main__":
     app.run(debug = True)
     
