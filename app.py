@@ -1,8 +1,9 @@
 
 from flask import Flask, request, send_from_directory
+import bson 
+from bson.json_util import dumps
 import pymongo
 from pymongo import MongoClient
-import json
 import flask as fff
 
 #-------------------------------------#
@@ -44,14 +45,16 @@ def send_js(path):
 def requestHandler():
     
     print  ("\nTest from DB")
-    l=[]
-    for a in g: l.append({'Title':a['Title'],'Body':a['Body']})
-        
+    
+    #l = loads(bson_file.read())
+    l = []
+    for a in g: l.append({"_id":a["_id"],"Title":a["Title"],"Body":a["Body"]})
+    
     print(l)
-    return str(l)
+    return dumps(l)
 
 
 if __name__ == "__main__":
     app.run(debug = True)
     
-client.close()
+#client.close()

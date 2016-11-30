@@ -31,10 +31,15 @@ angular.module('app.data',[])
         data.getData = function(){
             $http({
                 method: 'GET',
-                url: 'http://127.0.0.1:5000/h'
+                url: '/h'
             }).then(function success(response){
-                $log.info(" hello this is the get", response);
-                data.item = response.data;
+                $log.info(" hello this is the get", response.data);
+                if(response.data.length === 0){
+                    $log.info("empty set");
+                }else{
+                    data.item = angular.fromJson(response.data);
+                    $log.info("SUCCESS!!");
+                }            
             }, function error(response){
                 $log.info(" damn"+response);
             });
@@ -43,14 +48,15 @@ angular.module('app.data',[])
         data.postData = function(data){
             $http({
                 method: 'POST',
-                url: 'http://127.0.0.1:5000/h'
+                url: '/h'
             }).then(function sucess(response){
                 $log.info(" hello from post"+response);
-                JSON.stringify(data.item);
+                data.item = JSON.stringify(data.item);
             }, function error(response){
                 $log.info(" damn from post "+response);
             });
         };
+    
         return data;
 
     });
