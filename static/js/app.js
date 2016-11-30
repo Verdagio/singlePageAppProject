@@ -27,6 +27,6 @@ angular.module('app' , ["ngRoute", "app.controller","app.services", "app.data"])
         controller: "topicCtrl"
     })
     .otherwise({
-        templateUrl: "static/views/home.html"
+        redirectTo: "/"
     });
 });
