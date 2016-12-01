@@ -1,9 +1,10 @@
 
-from flask import Flask, request, send_from_directory, json
-import bson 
+from flask import Flask, send_from_directory
+import bson, json
+from flask import request as r
 from bson.json_util import dumps
 import pymongo
-from pymongo import MongoClient
+from pymongo import MongoClient, collection
 import flask as fff
 
 #-------------------------------------#
@@ -56,10 +57,14 @@ def sendToDB():
     
     the_file = db.posts.find()
     
-    theData = request.get_json()
+    posts = db.posts
+    print("starting post to db")
+    self = r.get_json()
+    print("\ngot self\n")
+    print (self)
+    print("executing insert")
+    posts.insert( self)
     
-    print("Post begin ")
-    db.posts.insert_one(theData)
     return 'Successful post'
 
     the_file.close()

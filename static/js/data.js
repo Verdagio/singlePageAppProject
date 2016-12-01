@@ -65,18 +65,23 @@ angular.module('app.data',[])
         };
     
         data.postData = function(posts){
-            $log.info("IM HERE" + posts);
-            $http({
+            $log.info("Entering http post " + posts);
+            $http.post('/h', posts).then(function success(res){
+                $log.info("success" + posts);
+            }, function error(res){
+                $log.info("fail "+ posts);
+            });
+            /*$http({
                 method: 'POST',
                 url: '/h',
                 data: posts,
-                type: 'application/json'
+                Content-Type: 'application/json'
             }).then(function sucess(response){
-                $log.info("Success on post " + response.status);
+                $log.info("Success on post " + response.data);
                 
             }, function error(response){
-                $log.info("Failure on post " + response.status);
-            });
+                $log.info("Failure on post " + response.data);
+            });*/
         };
     
         return data;
