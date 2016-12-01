@@ -1,7 +1,6 @@
 # Single Page App Project
 ### Authors - Daniel Verdejo, & Karle Sleith
 
-
 # Project outline
 In this project, we look to utilize multiple technologies to build a single page web application. The first tasks of the project we’re choosing what we wanted our single page application to do, and then choosing the technologies we would use to accomplish this. The choice of application would be a blog style entertainment website (see below). 
 
@@ -55,17 +54,50 @@ Download and double click the installer, follow the on-screen instructions for i
 
 ######Installing modules
 Using the **Command Prompt** do the following:
+Navigate to the Application folder, then to the Scripts folder, then enter the following
 
 `pip install pymongo`
 
-### Running the WebApp on localhost
+`pip install flask`
 
+
+### Running the WebApp on localhost
+In **Command Prompt**
 First we need to configure the database
 Step 1:
-Go to the directory of singlePageAppProject where you downloaded it and run dbConfig.py
+Go to the directory of mongoDB where you downloaded it and run both MongoD.exe and Mongo.exe,
+This is important as the web app requires a database to launch.
+Step 2:
+Go to the directory of singlePageAppProject where you downloaded it and run dbConfig.py, this will create the "project database"
+This creates the database and gives it a placeholder object for you to view on the Topics page.
 
 `python dbConfig.py`
 
+Step 3:
+Go to the directory of singlePageAppProject where you downloaded it and run app.py, this will launch the app on the localHost on port 5000 / 127.0.0.1:5000.
 
 
-. . . 
+`python app.py`
+
+Enjoy The FourLeafInteractive Website
+
+
+
+
+### Conclusion
+
+### References
+
+[Angular JS Docs](https://docs.angularjs.org/api)
+
+[Angular correct data binding](https://thinkster.io/a-better-way-to-learn-angularjs/services)
+
+[Flask Docs](http://flask.pocoo.org/docs/0.11/)
+
+[Python Docs](https://docs.python.org/3/)
+
+[MongoDB Docs](http://api.mongodb.com/python/current/)
+
+[Stack Overflow Question]((http://stackoverflow.com/questions/40897467/angularjs-w-flask-backend-representing-the-data-passed-from-backend/40898990#40898990)
+
+[Stack Overflow](http://stackoverflow.com/)
