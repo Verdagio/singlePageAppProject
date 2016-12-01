@@ -41,15 +41,14 @@ def requestHandler():
     the_file = db.posts.find()
     
     print  ("\nTest from DB")
-    
-    
     theData = []
     for a in the_file:
         print(type(a), a)
-        theData.append({"Title":a["Title"],"Body":a["Body"]})
+        theData.append({"title":a["title"],"body":a["body"]})
+        
     
     print(theData)
-    return jsonify(theData)
+    return dumps(theData)
     
     the_file.close()
 

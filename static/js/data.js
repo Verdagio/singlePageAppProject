@@ -17,41 +17,55 @@ angular.module('app.data',[])
     "use strict";
     
     var data = {};
-    //window.alert(data.data);
     
-   // window.console.log(data);
-    //window.console.log(JSON.stringify(data));
+   /*   The below code is for testing purposes.
+        this test lead to the a successful solution! :) 
+   data.getData = function(){
+       var i;
+       var myObj = [];
+        data.item = [
+            {id: 1, title:"An Intro to A!", body:"Hello there AAA! :) "},
+            {id: 2, title:"An Intro to B!", body:"Hello there BBB! :)"},
+            {id: 3, title:"An Intro to C!", body:"Hello there! ccc:)"}];
+       
+        for (i = 0; i < data.item.length; i++){
+            myObj[i] = (data.item[i]);
+        }
+        return myObj;
+    };   */ 
     
-    //data.getData = function(){
-    /*data.item = [{id: 1, title:"An Intro!", body:"Hello there! Welcome to the first post of the blog. In our blog we're going to talk about everything from games, to tv shows & movies. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things gaming, tv, & film. Thanks for reading and get posting :) "},
-    {id: 2, title:"An Intro to games!", body:"Hello there! Welcome to the first post of the blog. In this section it's all fun and games. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things gaming. Thanks for reading and get posting :)"},
-    {id: 3, title:"An Intro!", body:"Hello there! Welcome to the first post of the blog. In this section it's show time, the discussions, spoilers, and reactions to the best of tv & film. We encourage you to take part in the discussion posting your own thoughts and opinions on any and all things tv, & film. Thanks for reading and get posting :)"}   
-    ];*/
     
-        data.getData = function(){
+
+     data.getData = function(){
+         var i;
+         var myObj = [];
             $http({
                 method: 'GET',
                 url: '/h'
             }).then(function success(response){
-                $log.info(" hello this is the get", response.data);
+                $log.info(" hello the get", response.data);
+                for (i = 0; i < response.data.length; i++){
+                    myObj[i] = (response.data[i]);
+                }
                 if(response.data.length === 0){
                     $log.info("empty set");
                 }else{
-                    data.item = angular.fromJson(response.data);
-                    $log.info("SUCCESS!!");
+                    data.item = response.data;
+                    $log.info("SUCCESS!!" + myObj[0]);
                 }            
             }, function error(response){
                 $log.info(" damn"+response);
             });
+            return myObj;
         };
     
-        data.postData = function(data){
+        data.postData = function(posts){
             $http({
                 method: 'POST',
                 url: '/h'
             }).then(function sucess(response){
+                response.data = JSON.parse(posts.item);
                 $log.info(" hello from post"+response);
-                data.item = JSON.stringify(data.item);
             }, function error(response){
                 $log.info(" damn from post "+response);
             });

@@ -10,8 +10,8 @@ print('Connected To the "Project" Database')
 
 
 post = {
-		"Title":"PS4",
-		"Body":"PS4 Project Launches Today",
+		"Title":"hello",
+		"Body":"h0feeo Project Launches Today",
 		}
 		
 posts = db.posts

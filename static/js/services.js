@@ -43,10 +43,10 @@ angular.module('app.services', [])
     pass file to database, update information in database and send
     back the updated data.
     */
-.factory('posts', function(data){
+.factory('posts', function(data, $log){
     "use strict";
-    var posts={};
-    posts.item = data.item;    
+    var posts={}; 
+    
     /*  D.V. 16/Nov/16 
         - Add post function below - 
         post id will be automated, title & body to be entered 
@@ -56,15 +56,11 @@ angular.module('app.services', [])
         layer, with aim of parsing to .json file and making a request from
         api.
     */
-   posts.getPosts = function(){
-        posts.item = data.getData();
-   };
+    posts.item = data.getData();
+    
    posts.addPost = function(title, body){     
         data.postData(posts.item.push({title: title, body: body}));
    };
-    
-
-    
-
+        $log.info("in the posts" + posts.item);
     return posts;
 });
