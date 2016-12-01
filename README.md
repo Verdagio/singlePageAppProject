@@ -69,6 +69,7 @@ First we need to configure the database:
 Step 1:
 Go to the directory of mongoDB where you downloaded it and run both MongoD.exe and Mongo.exe,
 This is important as the web app requires a database to launch.
+
 Step 2:
 Go to the directory of singlePageAppProject where you downloaded it and run dbConfig.py, this will create the "project database"
 This creates the database and gives it a placeholder object for you to view on the Topics page.
