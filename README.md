@@ -79,12 +79,26 @@ Go to the directory of singlePageAppProject where you downloaded it and run app.
 
 `python app.py`
 
-Enjoy The FourLeafInteractive Website
+Enjoy The FourLeafInteractive Website!
 
 
 
 
 ### Conclusion
+### Karle Sleith & Daniel Verdejo - November 31st 2016
+
+At the start of the project we set our goal, to develop a single page web app, using Python, AngularJs and MongoDb, and we are delighted that we achieved this.
+
+There was many more things we wished to do on the project however, we hoped to have images in the Database, Video Embedding and an User Account system. This was lost due to time constraints and issues we had on the project.
+
+The first main issue arose a month into developement, We each worked on our own side of the project, Karle on Back-end, Daniel on Front-end, and when the time came to put them together, it just wouldn't work. This set us back a week. The problem turned out to be a series of issues, the python wasn't connecting to the App.Js, HTTP requests were not what we wanted, and the cache on the laptops weren't being cleared, so when we had changed code, it still showed the same. To combat this, We decided to do our coding together, when we were both in the same room, this would help us better communicate our issues, and help us both understand the others work.
+
+The second issue we had was not as large, we spent time trying to pass information from MongoDB through the factories, we discovered that MongoDB uses a BSON format, and that it needed to be parsed to JSON for it to be read.
+
+We did this project as a team, there was times when argurments were made about how a sitituation should be handeled, and each time we tried to be respectful of each others opinion, and come to a compromise in a calm and professional manner.
+
+All in all, the project went smoothly apart from a few stresses and setbacks. We both learned alot with this project, like what's allowed and not allowed when passing data between 4 diffrent languages. if we were to do it again we would try and avoid Angular and stick to Flask and HTML. MongoDB had a learning curve, to be able to use, but once it was solved, it was pretty straight forward.
+
 
 ### References
 
