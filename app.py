@@ -1,5 +1,5 @@
 
-from flask import Flask, request, send_from_directory, jsonify
+from flask import Flask, request, send_from_directory, json
 import bson 
 from bson.json_util import dumps
 import pymongo
@@ -13,7 +13,6 @@ client = MongoClient()
 db = client.project
 
 app = Flask(__name__)
-
 
 
 #-------------------------------------#
@@ -35,8 +34,9 @@ def send_js(path):
     return app.send_from_directory('app.js',path)
 
 
-@app.route('/h', methods = ['POST', 'GET'])
+@app.route('/h', methods = ['GET'])
 def requestHandler():
+    
     
     the_file = db.posts.find()
     
@@ -45,14 +45,25 @@ def requestHandler():
     for a in the_file:
         print(type(a), a)
         theData.append({"title":a["title"],"body":a["body"]})
-        
-    
+
     print(theData)
     return dumps(theData)
     
     the_file.close()
 
+@app.route('/h', methods = ['POST'])
+def sendToDB():
+    
+    the_file = db.posts.find()
+    
+    theData = request.get_json()
+    
+    print("Post begin ")
+    db.posts.insert_one(theData)
+    return 'Successful post'
 
+    the_file.close()
+        
 if __name__ == "__main__":
     app.run(debug = True)
     

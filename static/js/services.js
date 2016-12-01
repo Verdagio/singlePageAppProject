@@ -58,9 +58,18 @@ angular.module('app.services', [])
     */
     posts.item = data.getData();
     
-   posts.addPost = function(title, body){     
-        data.postData(posts.item.push({title: title, body: body}));
+   posts.addPost = function(title, body){    
+        var i;
+        var myObj = [];
+        posts.item.push({ body: body, title: title});
+       
+        for(i = 0; i < posts.item.length; i++){
+            $log.info("in loop " + JSON.stringify(posts.item[i]));
+            myObj[i] = angular.toJson(posts.item[i]);
+        }
+        data.postData(myObj);
+       //$log.info("post function invoked" + posts.item[3]);
+       //posts.item = data.getData();
    };
-        $log.info("in the posts" + posts.item);
     return posts;
 });

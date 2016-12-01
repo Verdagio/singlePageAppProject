@@ -35,7 +35,12 @@ angular.module('app.data',[])
     };   */ 
     
     
-
+/*  In the getData function we make a http GET on the /h route.
+    If this is successful we iterate over our response data
+    and save our data elements into their respective index in
+    our array we then return this array. If there is nothing in
+    the response data we send a 'empty set' message to the console,
+    or if theres an error we print this to the console also*/
      data.getData = function(){
          var i;
          var myObj = [];
@@ -50,24 +55,27 @@ angular.module('app.data',[])
                 if(response.data.length === 0){
                     $log.info("empty set");
                 }else{
-                    data.item = response.data;
-                    $log.info("SUCCESS!!" + myObj[0]);
+                    //data.item = response.data;
+                    $log.info("Success!!" + myObj);
                 }            
             }, function error(response){
-                $log.info(" damn"+response);
+                $log.info("Failure " + response);
             });
             return myObj;
         };
     
         data.postData = function(posts){
+            $log.info("IM HERE" + posts);
             $http({
                 method: 'POST',
-                url: '/h'
+                url: '/h',
+                data: posts,
+                type: 'application/json'
             }).then(function sucess(response){
-                response.data = JSON.parse(posts.item);
-                $log.info(" hello from post"+response);
+                $log.info("Success on post " + response.status);
+                
             }, function error(response){
-                $log.info(" damn from post "+response);
+                $log.info("Failure on post " + response.status);
             });
         };
     
