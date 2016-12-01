@@ -45,11 +45,11 @@ In another **Command Prompt** instance:
 
 `cd Program Files\MongoDB\Server\3.2\bin\mongod`
 
-### Python
+### Python 3.5.2 (Anaconda)
 
 ######Setup & Installation
 
-Go to: [Download Python](https://www.python.org/downloads/)
+Go to: [Download Python Anaconda](https://www.continuum.io/downloads)
 
 Download and double click the installer, follow the on-screen instructions for installation.
 
@@ -61,7 +61,10 @@ Using the **Command Prompt** do the following:
 ### Running the WebApp on localhost
 
 First we need to configure the database
+Step 1:
+Go to the directory of singlePageAppProject where you downloaded it and run dbConfig.py
 
+`python dbConfig.py`
 
 
 

@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-
+#Karle Sleith -November
+#REF https://github.com/buckyroberts/Source-Code-from-Tutorials/tree/master/Flask "NewBoston"
+#Importing Modules into Python
 from flask import Flask, send_from_directory
 import bson, json
 from flask import request as r
-=======
-#Karle Sleith -November
-#Importing Modules into Python
-from flask import Flask, request, send_from_directory, json
-import bson 
->>>>>>> da74af49d0e4bf23a1ed3eb96bef4d4a72c9e7b9
+
 from bson.json_util import dumps
 import pymongo
 from pymongo import MongoClient, collection
@@ -47,16 +43,18 @@ def requestHandler():
     #defining db location
     the_file = db.posts.find()
     
+    #We take the information from MongoDB and post to the Screen 
     print  ("\nTest from DB")
     theData = []
     for a in the_file:
         print(type(a), a)
-        theData.append({"title":a["Title"],"body":a["Body"]})
-
+        theData.append({"title":a["title"],"body":a["body"]})
+    #Just So we can see what the Data looked like before it went to Angular
     print(theData)
     #Dumps data as JSON Object
     return dumps(theData)
     
+#Close the Db
     the_file.close()
 
     #Post to the Database
@@ -65,8 +63,8 @@ def sendToDB():
     
     #defining db location
     the_file = db.posts.find()
-    
     posts = db.posts
+    #Post to The Database
     print("starting post to db")
     self = r.get_json()
     print("\ngot self\n")
@@ -74,8 +72,10 @@ def sendToDB():
     print("executing insert")
     posts.insert( self)
     
-    return 'Successful post'
+    #Returning a message to the user that we made a successful post
+    return '\nSuccessful post!!!\n'
 
+#Close the Db
     the_file.close()
         
     #Runs the App
