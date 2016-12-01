@@ -63,7 +63,9 @@ Navigate to the Application folder, then to the Scripts folder, then enter the f
 
 ### Running the WebApp on localhost
 In **Command Prompt**
-First we need to configure the database
+
+First we need to configure the database:
+
 Step 1:
 Go to the directory of mongoDB where you downloaded it and run both MongoD.exe and Mongo.exe,
 This is important as the web app requires a database to launch.
