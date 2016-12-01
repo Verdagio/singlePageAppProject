@@ -66,7 +66,7 @@ angular.module('app.services', [])
         for(i = 0; i < posts.item.length; i++){
             $log.info("in loop " + JSON.stringify(posts.item[i]));
             if(i === posts.item.length-1){
-                $log.info("in da if");
+                $log.info("in the if");
                 myObj = posts.item[i];
             }
             
