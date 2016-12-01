@@ -9,38 +9,19 @@ We will also try to link the web app to a small database that will store some in
 using python & flask a database will store the post & user info,
 data links into factory then using angular ng repeat contents from factory
 
-ng-route used to switch between views seamlessly.
+Setup
+Needed for this project
 
-Creating a blog single page web app 
+MongoDB
+https://www.mongodb.com/
+Python 3.5.2 (Anaconda)
+https://www.continuum.io/downloads
+Flask
+Once Anaconda is downloaded and installed, in the command line
+,go to the application folder, go to Scripts, pip install Flask.
 
-the pages should consist of
-
-1 Home page that shows different topic
-2 the detailed list of posts under a topic - should have input box to allow users to add to the blog
-3 create new topic found on the topics page.
-
-page one should consist of (home)
-
-The banner
-navbar
-the list of topics each topic displayed in a card style view - including preview of first (original) post, author, date posted.
-footer bar
-
-page 2 should consist of (topic)
-
-banner
-navbar
-list of posts under a topic - topics are in cards with title, author of post, body of post, date posted
-an input section where users can then add to a topic (comment, discuss) add button, cancel button
-footer
-
-page 3 (new topic)
-banner
-navbar
-title of the topic
-author of topic
-body of topic
-add button, cancel button
-footer
-
+Running the Project 
+go to the singlePageAppProject in the cmd
+python dbConfig.py to created the DB and Populated it
+python app.py to run the webpage
 
