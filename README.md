@@ -102,6 +102,13 @@ We did this project as a team, there was times when argurments were made about h
 
 All in all, the project went smoothly apart from a few stresses and setbacks. We both learned alot with this project, like what's allowed and not allowed when passing data between 4 diffrent languages. If I were to do another project like this I would be interested in using Angular 2 with Flask to see what differences it would makw. MongoDB had a learning curve, to be able to use, but once it was solved, it was pretty straight forward.
 
+### Screenshots
+
+![alt tag](http://imgur.com/nCS45bF)
+
+![alt tag](http://imgur.com/a5YGKbr)
+
+![alt tag](http://imgur.com/6HtQUGP)
 
 ### References
 
