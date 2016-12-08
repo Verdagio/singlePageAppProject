@@ -104,11 +104,11 @@ All in all, the project went smoothly apart from a few stresses and setbacks. We
 
 ### Screenshots
 
-![alt tag](http://imgur.com/nCS45bF)
+![home](http://imgur.com/nCS45bF)
 
-![alt tag](http://imgur.com/a5YGKbr)
+![post](http://imgur.com/a5YGKbr)
 
-![alt tag](http://imgur.com/6HtQUGP)
+![add one](http://imgur.com/6HtQUGP)
 
 ### References
 
