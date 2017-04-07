@@ -12,7 +12,7 @@ To be able to run the web application on your system you will need to do the fol
 
 ##### MongoDB
 
-######Install
+###### Install
 
 Go to: [Download MongoDb](https://docs.mongodb.com/)
 
@@ -22,7 +22,7 @@ How to, Reference: [MongoDB Documentation](https://docs.mongodb.com/v3.0/tutoria
 In Windows Explorer, locate the downloaded MongoDB .msi file, which typically is located in the default Downloads folder. 
 Double-click the .msi file. A set of screens will appear to guide you through the installation process.
 
-######Setup & Installation
+###### Setup & Installation
 
 Using the **Command Prompt** do the following:
 
@@ -30,7 +30,7 @@ Using the **Command Prompt** do the following:
 
 `mkdir data/db/`
 
-######Connect to MongoDB
+###### Connect to MongoDB
 
 Using the **Command Prompt** do the following:
 
@@ -46,13 +46,13 @@ In another **Command Prompt** instance:
 
 ### Python 3.5.2 (Anaconda)
 
-######Setup & Installation
+###### Setup & Installation
 
 Go to: [Download Python Anaconda](https://www.continuum.io/downloads)
 
 Download and double click the installer, follow the on-screen instructions for installation.
 
-######Installing modules
+###### Installing modules
 Using the **Command Prompt** do the following:
 Navigate to the Application folder, then to the Scripts folder, then enter the following
 
